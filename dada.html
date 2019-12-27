@@ -72,7 +72,8 @@
           var wordSpan =
                 $('<span/>')
                   .addClass('poemWord')
-                  .text( words[i]);
+                  .text( words[i])
+                  .css({'transform': 'rotate(' + (Math.random() * 5 - 2.5) + 'deg)'});
           poemDiv.append( wordSpan);
         }
 
