@@ -1,1 +1,10 @@
+body {
+	background: silver;
+}
 
+#inputText {
+	width: 80em;
+	height: 30em;
+	resize: none;
+	background: white;
+}
