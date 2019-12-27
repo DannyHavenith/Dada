@@ -4,10 +4,24 @@
     <meta charset="utf-8">
     <title>Dada</title>
     <link rel="stylesheet" href="dada.css">
+    <!-- load jQuery. 
+        The 'src' attribute is where to download the javascript.
+        Attributes 'integrity' and 'crossorigin' are there to make sure we get
+        the version that we expect.
+    !-->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"></script>
+
     <script>
       function makeDada()
       {
-        alert( "Dada!");
+        // get the value of the textarea with id 'inputText'
+        var text = $('#inputText').val(); 
+        
+        // show that text
+        alert( text);
       }
     </script>
   </head>
