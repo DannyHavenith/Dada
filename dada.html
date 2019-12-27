@@ -18,14 +18,17 @@
       function makeDada()
       {
         // get the value of the textarea with id 'inputText'
-        var text = $('#inputText').val(); 
-        
+        var text = $('#inputText').val();
+
         // show that text
-        alert( text);
+        $('#outputText').text( text);
       }
     </script>
   </head>
   <body>
+  <div id=outputText>
+  Text will appear here...
+  </div>
   <textarea id='inputText'></textarea>
   <input type="button" value="Dada!" onclick="makeDada()"> 
   </body>
