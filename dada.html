@@ -45,7 +45,7 @@
       */
       function textToWords( text)
       {
-        return text.split(' ');
+        return text.split(/[^a-zA-Z0-9]+/);
       }
 
       /**
