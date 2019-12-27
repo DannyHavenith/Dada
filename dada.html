@@ -21,7 +21,10 @@
         var text = $('#inputText').val();
 
         // wrap the text in a new HTML div element
-        var newDiv = $('<div/>').text( text);
+        var newDiv = 
+                $('<div/>')
+                    .addClass('poem')
+                    .text( text);
 
         // Append the new div element to the output area
         $('#outputText').append( newDiv);
