@@ -1,11 +1,19 @@
 body {
-	background: silver;
+	background: white;
 }
 
 .poem {
-	background: rgb(192,192,255);
+	background: silver;
 	margin: 5px;
 	width: 80em;
+}
+
+.poemWord {
+	margin: 2px;
+	background: white;
+	padding: 2px;
+	word-wrap: break-word;
+	display: inline-block;
 }
 
 #inputText {

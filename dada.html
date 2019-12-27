@@ -15,19 +15,45 @@
       crossorigin="anonymous"></script>
 
     <script>
+      /**
+      * Naive text-to-words conversion.
+      * This function simply splits the text on spaces. This will fail on
+      * punctuation and repeated spaces.
+      */
+      function textToWords( text)
+      {
+        return text.split(' ');
+      }
+
+      /**
+      * Take the text from input element '#inputText' and create a Dadaistic
+      * poem out of it
+      */
       function makeDada()
       {
         // get the value of the textarea with id 'inputText'
+        // and split it into individual words
         var text = $('#inputText').val();
+        var words = textToWords( text);
 
-        // wrap the text in a new HTML div element
-        var newDiv = 
+        // create a new HTML div element that will contain the poem
+        var poemDiv =
                 $('<div/>')
-                    .addClass('poem')
-                    .text( text);
+                    .addClass('poem');
+
+        // now add the words one-by-one to the poem div element,
+        // but wrap each word in a span of its own.
+        for (var i = 0; i < words.length; ++i)
+        {
+          var wordSpan =
+                $('<span/>')
+                  .addClass('poemWord')
+                  .text( words[i]);
+          poemDiv.append( wordSpan);
+        }
 
         // Append the new div element to the output area
-        $('#outputText').append( newDiv);
+        $('#outputText').append( poemDiv);
       }
     </script>
   </head>
