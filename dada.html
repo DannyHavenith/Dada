@@ -16,6 +16,29 @@
 
     <script>
       /**
+      * Randomly shuffle the elements of an array.
+      * This was found using a search for "javascript shuffle array".
+      * The algorithm below is known as the Fisher-Yates algorithm.
+      */
+      function shuffle(array) {
+        var m = array.length, t, i;
+
+        // While there remain elements to shuffle…
+        while (m) {
+
+          // Pick a remaining element…
+          i = Math.floor(Math.random() * m--);
+
+          // And swap it with the current element.
+          t = array[m];
+          array[m] = array[i];
+          array[i] = t;
+        }
+
+        return array;
+      }
+
+      /**
       * Naive text-to-words conversion.
       * This function simply splits the text on spaces. This will fail on
       * punctuation and repeated spaces.
@@ -35,6 +58,7 @@
         // and split it into individual words
         var text = $('#inputText').val();
         var words = textToWords( text);
+        shuffle( words);
 
         // create a new HTML div element that will contain the poem
         var poemDiv =
