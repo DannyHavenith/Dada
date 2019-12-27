@@ -20,14 +20,18 @@
         // get the value of the textarea with id 'inputText'
         var text = $('#inputText').val();
 
-        // show that text
-        $('#outputText').text( text);
+        // wrap the text in a new HTML div element
+        var newDiv = $('<div></div>');
+        newDiv.text( text);
+
+        // Append the new div element to the output area
+        $('#outputText').append( newDiv);
       }
     </script>
   </head>
   <body>
   <div id=outputText>
-  Text will appear here...
+  Text will appear below:
   </div>
   <textarea id='inputText'></textarea>
   <input type="button" value="Dada!" onclick="makeDada()"> 
